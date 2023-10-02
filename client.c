@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 17:36:30 by agrimald          #+#    #+#             */
-/*   Updated: 2023/09/29 18:33:42 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/02 20:34:13 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	check_arguments(int argc, char **argv)
 		}
 		i++;
 	}
-	if (argv == 2)
+	if (argc == 2)
 	{
 		ft_printf("Error\nMising arguments\n");
 		exit(2);
