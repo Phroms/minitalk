@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:00:02 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/02 20:00:17 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/04 16:40:27 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,6 @@ int		main(int argc, char **argv);
 
 	/* Server */
 
-void	handler(int num_sig, siginfo_t *info, void *context);
+void	handler(int num_sig);
 int		main(int argc, char **argv);
 #endif

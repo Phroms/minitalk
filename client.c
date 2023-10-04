@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 17:36:30 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/02 20:34:13 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/04 17:18:30 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,16 @@ void	send_msg(int pid, const char *msg)
 	while (msg[i])
 	{
 		c = msg[i];
-		bit = 0;
-		while (bit < 8)
+		bit = 7;
+		while (bit >= 0)
 		{
-			if ((c >> bit) & 1)
+			if (((c >> bit) & 1) == 1)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			bit++;
-			usleep(100);
+			bit--;
+			usleep(70);
 		}
-		usleep(1000);
 		i++;
 	}
 	return ;
@@ -58,7 +57,7 @@ void	check_arguments(int argc, char **argv)
 		}
 		i++;
 	}
-	if (argc == 2)
+	if (*argv[2] == 0)
 	{
 		ft_printf("Error\nMising arguments\n");
 		exit(2);
@@ -67,7 +66,6 @@ void	check_arguments(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	struct sigaction	sa;
 	pid_t				pid;
 
 	ft_printf("Client PID: %d\n", getpid());
