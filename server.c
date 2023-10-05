@@ -6,14 +6,14 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 18:33:46 by agrimald          #+#    #+#             */
-/*   Updated: 2023/10/04 17:37:49 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/10/05 19:50:44 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <signal.h>
 #include "libft/libft.h"
 
-void	handler(int num_sig)
+void	handler(int num_sig, siginfo_t *info, void *context)
 {
 	static unsigned char	recivied_char = '\0';
 	static int				bit_count = 0;
